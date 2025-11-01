@@ -91,10 +91,19 @@ export default function ViewPixelArtDetailPage() {
                             <span className="animate-pulse">Loading...</span>
                         ) : svgImage ? (
                             <div
-                                className="w-full h-full flex items-center justify-center"
-                                dangerouslySetInnerHTML={{ __html: svgImage }}
+                                className="w-full h-full flex items-center justify-center overflow-hidden"
                                 style={{ imageRendering: "pixelated" }}
-                            />
+                            >
+                                <div
+                                    dangerouslySetInnerHTML={{ 
+                                        __html: svgImage
+                                            .replace(
+                                                '<svg',
+                                                '<svg style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; width: 100%; height: 100%; display: block;" preserveAspectRatio="xMidYMid meet"'
+                                            )
+                                    }}
+                                />
+                            </div>
                         ) : (
                             <span className="text-gray-400">No image available</span>
                         )}

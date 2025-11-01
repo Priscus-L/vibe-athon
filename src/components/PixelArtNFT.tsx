@@ -89,10 +89,22 @@ export default function PixelArtNFT({ tokenId, contractAddress: propContractAddr
                     </div>
                 ) : svgImage ? (
                     <div
-                        className="w-full h-full flex items-center justify-center"
-                        dangerouslySetInnerHTML={{ __html: svgImage }}
+                        className="w-full h-full flex items-center justify-center overflow-hidden"
                         style={{ imageRendering: "pixelated" }}
-                    />
+                    >
+                        <div
+                            className="w-full h-full"
+                            dangerouslySetInnerHTML={{ 
+                                __html: svgImage
+                                    .replace(/width=['"]\d+['"]/, 'width="100%"')
+                                    .replace(/height=['"]\d+['"]/, 'height="100%"')
+                                    .replace(
+                                        '<svg',
+                                        '<svg style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; display: block;" preserveAspectRatio="xMidYMid meet"'
+                                    )
+                            }}
+                        />
+                    </div>
                 ) : (
                     <div className="absolute inset-0 flex items-center justify-center">
                         <span className="text-gray-400">No image</span>
