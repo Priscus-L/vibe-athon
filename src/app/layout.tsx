@@ -5,8 +5,8 @@ import { type ReactNode } from "react"
 import { Providers } from "./providers"
 
 export const metadata: Metadata = {
-    title: "NftMarketplace",
-    description: "A non-custodial marketplace for NFTs",
+    title: "Pixel Art NFT Dapp",
+    description: "Create, view, and mint 16x16 pixel art NFTs",
 }
 
 export default function RootLayout(props: { children: ReactNode }) {

@@ -18,7 +18,7 @@ export default function Header() {
                         width={36}
                         height={36}
                     />
-                    <h1 className="font-bold text-2xl hidden md:block">NFT Marketplace</h1>
+                    <h1 className="font-bold text-2xl hidden md:block">Pixel Art NFT</h1>
                 </a>
                 <a
                     href="https://github.com/cyfrin/ts-nft-marketplace-cu"
@@ -30,13 +30,20 @@ export default function Header() {
                 </a>
             </div>
             <h3 className="italic text-left hidden text-zinc-500 lg:block">
-                A non-custodial, permissionless NFT Marketplace
+                Create, view, and mint pixel art NFTs
             </h3>
-            <a href="/cake-nft" className="flex items-center gap-1 text-zinc-800">
-                <h1 className="flex items-center justify-center gap-1 px-4 py-2 bg-zinc-100 hover:bg-zinc-200 text-zinc-800 rounded-md shadow-sm transition-colors duration-200 border border-zinc-300">
-                    Cake NFT
-                </h1>
-            </a>
+            <div className="flex items-center gap-2">
+                <a href="/create-pixel-art" className="flex items-center gap-1 text-zinc-800">
+                    <h1 className="flex items-center justify-center gap-1 px-4 py-2 bg-zinc-100 hover:bg-zinc-200 text-zinc-800 rounded-md shadow-sm transition-colors duration-200 border border-zinc-300">
+                        Create
+                    </h1>
+                </a>
+                <a href="/view-pixel-art" className="flex items-center gap-1 text-zinc-800">
+                    <h1 className="flex items-center justify-center gap-1 px-4 py-2 bg-zinc-100 hover:bg-zinc-200 text-zinc-800 rounded-md shadow-sm transition-colors duration-200 border border-zinc-300">
+                        Gallery
+                    </h1>
+                </a>
+            </div>
             <div className="flex items-center gap-4">
                 <ConnectButton />
             </div>
